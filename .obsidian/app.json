@@ -1,0 +1,9 @@
+{
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Topics",
+  "promptDelete": false,
+  "showLineNumber": false,
+  "strictLineBreaks": false,
+  "useMarkdownLinks": false
+}

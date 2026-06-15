@@ -1,0 +1,11 @@
+# Obsidian workspace state (machine-specific)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/hotkeys.json
+.obsidian/graph.json
+.obsidian/cache
+
+# OS files
+.DS_Store
+Thumbs.db
+*.pdf
