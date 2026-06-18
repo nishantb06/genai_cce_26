@@ -106,12 +106,13 @@ $$\theta^{t+1} \leftarrow \theta^t - \alpha_2 \nabla_\theta J_{\mathrm{GAN}}(\th
 |Discriminator step|$\omega$|$\theta$ fixed|$\omega^{t+1} \leftarrow \omega^t + \alpha_1 \nabla_\omega J_{\mathrm{GAN}}$|
 |Generator step|$\theta$|$\omega$ fixed|$\theta^{t+1} \leftarrow \theta^t - \alpha_2 \nabla_\theta J_{\mathrm{GAN}}$|
 
-This alternating saddle-point optimisation is the **adversarial training** procedure at the heart of GANs.
+This alternating [[Saddle Point Optimisation|saddle-point optimisation]] is the **adversarial training** procedure at the heart of GANs — minimising over $\theta$ while maximising over $\omega$, which is notoriously prone to saturation and instability.
 
 ---
 
 ## Related
 
+- [[Saddle Point Optimisation]] — why min–max training is hard
 - [[Realization of Variational Divergence Minimisation (VDM)]] — general min–max objective this note specialises
 - [[F-Divergence]] — framework for choosing $f$ and $f^*$
 - [[Interpretation of a GAN as a Classifier-Guided Generative Sampler]] — intuitive reading of the discriminator

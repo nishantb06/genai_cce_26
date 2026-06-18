@@ -78,13 +78,14 @@ $$\theta^* = \arg\min_\theta J(\theta, \omega)$$
 
 $$\theta^*, \omega^* = \arg\min_\theta \max_\omega J(\theta, \omega)$$
 
-> This is **adversarial optimisation** — the generator minimises while the discriminator maximises the same objective $J(\theta, \omega)$. The same saddle-point problem arises when a specific $f$ is substituted into [[Realization of Variational Divergence Minimisation (VDM)|VDM]].
+> This is **adversarial optimisation** — the generator minimises while the discriminator maximises the same objective $J(\theta, \omega)$. This is a [[Saddle Point Optimisation|saddle point problem]], which is difficult to train stably. The same setup arises when a specific $f$ is substituted into [[Realization of Variational Divergence Minimisation (VDM)|VDM]].
 
 ---
 
 ## Related
 
 - [[Generative Adversarial Networks (GANs)]] — full GAN objective and training algorithm
+- [[Saddle Point Optimisation]] — why min–max training is unstable
 - [[Realization of Variational Divergence Minimisation (VDM)]] — theoretical min–max derivation
 - [[F-Divergence]] — divergence framework underlying VDM
 - [[Generative Modelling]]
