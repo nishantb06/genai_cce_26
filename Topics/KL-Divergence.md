@@ -12,7 +12,7 @@ $$\hat{\theta} = \arg\min_\theta D_{\mathrm{KL}}(P_X \| P_\theta) = \arg\max_\th
 This is the **[[Maximum Likelihood Estimation]] (MLE)**.
 
 ### Computing the Expectation via Samples
-One important thing to keep in mind while mathematical manipulation is to get to the form where we can represent our [[integrals in terms of expectations]]
+One important thing to keep in mind while mathematical manipulation is to get to the form where we can represent our [[Integrals in terms of expectations]]
 
 $$\int p_X(x) \log p_\theta(x)\, dx = \mathbb{E}_{x \sim p_X}[\log p_\theta(x)]$$
 

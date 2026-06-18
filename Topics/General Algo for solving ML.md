@@ -10,7 +10,7 @@ where $\theta = \{W_1, W_2, W_3, \ldots\}$.
 
 > Universal function approximation via sigmoid activations.
 
-2. **Define a distance** between $P_X$ and $P_\theta$: call it $D(P_X, P_\theta)$.
+2. **Define a distance** between $P_X$ and $P_\theta$: call it $D(P_X, P_\theta)$ called [[F-Divergence]]
 
 3. **Optimise $\theta$** to minimise the distance:
 
