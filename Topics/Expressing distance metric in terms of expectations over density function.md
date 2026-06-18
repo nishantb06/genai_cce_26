@@ -2,25 +2,7 @@
 
 $$D_f\left(P_x \,\|\, P_\theta\right) = \int_x p_\theta(x)\, f\!\left(\frac{p_x(x)}{p_\theta(x)}\right) \mathrm{d}x$$
 
----
-
-## Conjugate Function of a Convex Function
-
-If $f(u)$ is a convex function, then there exists a **conjugate function** $f^*(t)$ defined as:
-
-$$f^*(t) = \sup_{u \in \operatorname{dom} f} \left\{ ut - f(u) \right\}$$
-
-### Properties of the Conjugate $f^*(t)$
-
-**i)** $f^*(t)$ is also convex.
-
-**ii)** The conjugate of the conjugate recovers the original:
-
-$$
-\left[f^*(t)\right]^* = f(u)
-\implies
-f(u) = \sup_{t \in \operatorname{dom} f^*} \left\{ tu - f^*(t) \right\}
-$$
+The integral above is hard to optimise directly. We rewrite $f\!\left(p_x/p_\theta\right)$ using the [[Convex conjugate function|convex conjugate]] of $f$ — see [[Why convex conjugate in f-divergence]] for why this step is necessary and what problem it solves.
 
 ---
 
@@ -30,7 +12,7 @@ Let $u = \dfrac{p_x(x)}{p_\theta(x)}$. Then:
 
 $$D_f\left(P_x \,\|\, P_\theta\right) = \int_x p_\theta(x)\, f(u)\, \mathrm{d}x$$
 
-Substituting the conjugate representation $f(u) = \sup_t \left\{ tu - f^*(t) \right\}$:
+Using the conjugate representation $f(u) = \sup_t \left\{ tu - f^*(t) \right\}$ from [[Convex conjugate function]]:
 
 $$= \int_x p_\theta(x) \sup_t \left\{ tu - f^*(t) \right\} \mathrm{d}x$$
 
@@ -64,6 +46,8 @@ $$D_f\left(P_x \,\|\, P_\theta\right) \geq \sup_{T(x) \in \mathbb{T}} \int_x p_\
 
 ## Related
 
+- [[Why convex conjugate in f-divergence]] — motivation for the conjugate rewrite
+- [[Convex conjugate function]] — definition and properties of $f^*$
 - [[F-Divergence]] — integral definition of $D_f$ that we start from
 - [[integrals in terms of expectations]] — approximating the resulting expectation from samples
 - [[Variational Divergence Minimization]] — using the variational bound to train generative models
