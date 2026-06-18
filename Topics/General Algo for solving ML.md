@@ -20,7 +20,7 @@ Such that $P_{\hat{\theta}} \approx P_X$.
 
 ### Important Questions
 
-- (a) How to compute $D(P_X, P_\theta)$ without knowing $P_X$?
-- (b) How to solve the optimisation?
+- (a) How to compute $D(P_X, P_\theta)$ without knowing $P_X$? [[Expressing distance metric in terms of expectations over density function|Express $D_f$ as an expectation over $p_\theta$]] so it can be estimated from data.
+- (b) How to solve the optimisation? Use [[Expressing distance metric in terms of expectations over density function|the variational lower bound on $D_f$]] to obtain a tractable training objective.
 - (c) What parametric form to choose for $P_\theta$?
 - (d) How to sample from $P_\theta$?

@@ -57,13 +57,13 @@ A sample from $z \sim \mathcal{N}(0, I)$, passed through $g_{\theta^*}(z)$, prod
 
 ## The Open Questions
 
-**i)** How to compute the divergence metrics without knowing $P_x$ and $P_\theta$?
+**i)** How to compute the divergence metrics without knowing $P_x$ and $P_\theta$? One route is to [[Expressing distance metric in terms of expectations over density function|re-express the divergence as an expectation]] that can be estimated from samples.
 
 **ii)** What should be the choice of the divergence metric? answer : [[Constraints on the choice of the f function]]
 
 **iii)** How to choose $g_\theta(z)$, and in turn $P_\theta$?
 
-**iv)** How to solve the optimisation problem of minimising the divergence metric?
+**iv)** How to solve the optimisation problem of minimising the divergence metric? See [[Expressing distance metric in terms of expectations over density function|the variational lower bound on $D_f$]], which turns minimisation into a tractable optimisation over functions $T(x)$.
 
 ---
 

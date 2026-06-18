@@ -18,6 +18,13 @@ $$D_f\left(P_X | P_\theta\right) = \int_{\mathcal{X}} p_\theta(x), f\left(\frac{
 **ii)** $D_f(P_X | P_\theta) = 0 \iff P_X = P_\theta$.
 
 > **[[Convexity condition]]:** A function $f(u)$ is convex iff $\forall, u_1, u_2 \in U$ and $0 \leq \alpha_1, \alpha_2 \leq 1$: $$\alpha_1 f(u_1) + \alpha_2 f(u_2) \geq f(\alpha_1 u_1 + \alpha_2 u_2)$$
+
+---
+
+## From Integral to Expectation
+
+The integral above is hard to optimise directly. Using the convex conjugate of $f$, $D_f$ can be [[Expressing distance metric in terms of expectations over density function|expressed as an expectation over $p_\theta$]] and turned into a tractable variational objective.
+
 ---
 
 ## Examples of f-Divergence

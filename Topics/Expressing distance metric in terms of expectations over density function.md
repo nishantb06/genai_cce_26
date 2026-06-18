@@ -62,6 +62,16 @@ $$D_f\left(P_x \,\|\, P_\theta\right) \geq \sup_{T(x) \in \mathbb{T}} \int_x p_\
 
 ---
 
+## Related
+
+- [[F-Divergence]] — integral definition of $D_f$ that we start from
+- [[integrals in terms of expectations]] — approximating the resulting expectation from samples
+- [[Variational Divergence Minimization]] — using the variational bound to train generative models
+- [[Generative Modelling]] — why we need a tractable divergence objective in the first place
+- [[General Algo for solving ML]] — the training pipeline this derivation slots into
+
+---
+
 ## Tags
 
 #f-divergence #conjugate-function #variational-lower-bound #convex-analysis #generative-modelling #machine-learning

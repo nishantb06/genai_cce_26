@@ -41,7 +41,7 @@ $$\lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^{n} h(x_i) \approx \mathbb{E}_{P_x}
 
 ## Connection to f-Divergence
 
-If the [[F-Divergence]] can be expressed in terms of expectations over $p_x$, it can be approximated using the above.
+The [[F-Divergence]] can be [[Expressing distance metric in terms of expectations over density function|rewritten as an expectation over the model density $p_\theta$]] via convex conjugates. Once in that form, the integral can be approximated from samples using the machinery above.
 
 ---
 
