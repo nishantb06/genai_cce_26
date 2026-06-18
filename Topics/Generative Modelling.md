@@ -63,7 +63,7 @@ A sample from $z \sim \mathcal{N}(0, I)$, passed through $g_{\theta^*}(z)$, prod
 
 **iii)** How to choose $g_\theta(z)$, and in turn $P_\theta$?
 
-**iv)** How to solve the optimisation problem of minimising the divergence metric? See [[Expressing distance metric in terms of expectations over density function|the variational lower bound on $D_f$]], which turns minimisation into a tractable optimisation over functions $T(x)$.
+**iv)** How to solve the optimisation problem of minimising the divergence metric? [[Realization of Variational Divergence Minimisation (VDM)|Realise the variational bound]] with neural networks $g_\theta$ and $T_\omega$ in a min–max saddle-point problem.
 
 ---
 

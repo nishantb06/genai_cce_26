@@ -11,5 +11,5 @@ _Placeholder for notes on Variational Autoencoders (VAEs, VQVAE)._
 ## Related
 
 - [[Topics/Variational Divergence Minimization]]
-- [[Topics/GANs]]
+- [[Generative Adversarial Networks (GANs)]]
 - [[home]]

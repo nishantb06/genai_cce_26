@@ -51,6 +51,8 @@ $$= \int_{\mathcal{X}} p_X(x) \log \frac{p_X(x)}{p_\theta(x)}, dx = D_{\mathrm{K
 
 $$D_{\mathrm{JS}}(P_X | P_\theta) = D_f(P_X | P_\theta) \quad \text{with the above } f$$
 
+A closely related choice of $f(u) = u \log u - (u+1)\log(u+1)$ underlies the original [[Generative Adversarial Networks (GANs)|GAN]] objective via [[Realization of Variational Divergence Minimisation (VDM)|VDM]].
+
 ---
 
 ### iii) [[Total Variation Distance ]]— $f(u) = \dfrac{1}{2}|u - 1|$

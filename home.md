@@ -24,7 +24,7 @@ The course covers both **mathematical foundations** and **practical implementati
 |-------|-------|
 | Probabilistic Deep Generative Modelling | [[Topics/Probabilistic Foundations]] |
 | Variational Divergence Minimization | [[Topics/Variational Divergence Minimization]] |
-| Generative Adversarial Networks (GANs, WGANs) | [[Topics/GANs]] |
+| Generative Adversarial Networks (GANs, WGANs) | [[Generative Adversarial Networks (GANs)]] |
 | Variational Autoencoders (VAEs, VQVAE) | [[Topics/VAEs]] |
 | Denoising Diffusion Probabilistic Models (DDPMs) | [[Topics/Diffusion Models]] |
 | Conditional Diffusion & Score-based Models | [[Topics/Score-based Models]] |
