@@ -1,3 +1,10 @@
+### Architecture
+
+$$\underbrace{X}_{\text{data space}} \xrightarrow{\text{Enc}} \underbrace{Z}_{\text{latent space}} \xrightarrow{\text{Dec}} \hat{X}$$
+
+where $\dim(Z) \ll \dim(X)$ (representations / embeddings).
+
+---
 ## Setup
 
 $$\mathcal{D} = {x_1, x_2, \ldots, x_n} \sim \text{iid } P_x$$

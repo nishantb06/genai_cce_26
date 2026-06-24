@@ -9,3 +9,7 @@ Likelihood is an element in the range space of a the [[Probability Density]] fun
 
 Integrating likelihood over all the valid random variables gives us 1! so can we say that likelihood is the slope of the function which is called probability measure ?
 
+--- from Prob ML 
+Likelihood is the conditional probability of the data given the hypotheses
+
+

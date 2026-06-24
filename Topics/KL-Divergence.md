@@ -25,3 +25,4 @@ Therefore:
 $$\boxed{\hat{\theta} = \arg\min_\theta D_{\mathrm{KL}}(P_X \| P_\theta) = \arg\max_\theta \frac{1}{N} \sum_{i=1}^{N} \log p_\theta(x_i)}$$
 Related
 1. [[Sampling from a distribution]]
+

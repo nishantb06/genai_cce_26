@@ -63,6 +63,8 @@ $$\theta^*, \omega^* = \arg\min_\theta \max_\omega J(\theta, \omega)$$
 
 The discriminator must satisfy $T_\omega(x) : \mathcal{X} \to \operatorname{dom} f^*$. This is enforced by composing a standard network output with an $f$-divergence-specific activation:
 
+There is a fixed set of activation functions that must be used so the output of the generator maps cleanly to the input of the discriminator ![[images/Pasted image 20260618112849.png]]
+
 $$T_\omega(x) = \sigma_f\!\left(V_\omega(x)\right)$$
 
 where:

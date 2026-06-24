@@ -1,5 +1,3 @@
-# Reference Books
-
 ## Primary Texts
 
 ### Probabilistic Machine Learning: Advanced Topics

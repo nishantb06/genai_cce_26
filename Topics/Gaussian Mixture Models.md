@@ -73,6 +73,8 @@ $$q_{t+1}^* = \arg\max_q ; J_\theta(q) = P_\theta(z \mid x)$$
 
 > It can be analytically shown that the best $q^*(z \mid x)$ that optimises the ELBO is $P_\theta(z \mid x)$.
 
+[[When we cant find the best value of the posterior of the latent varaible]]
+
 Expanding via [[Bayes Rule]]:
 
 $$q_{t+1}^* = P_{\theta_t}(z \mid x) = \frac{P_{\theta_t}(x \mid z) \cdot P_{\theta_t}(z)}{P_{\theta_t}(x)}, \quad P_{\theta_t}(x) = \sum_z P_{\theta_t}(x \mid z), P_{\theta_t}(z)$$
@@ -102,7 +104,7 @@ If $P_\theta(z \mid x)$ cannot be estimated for a given latent variable model, t
 
 ### Sampling from GMM / How is GMM a sampler
 Lets say you have a six component GMM , you role a dice and as per the number which comes up , you choose that gaussian and then sample from it. 
-Note the GMM is trained so we would have the mean vector and the covariance matrix for each multivariate Gaussian
+Note the GMM is trained so we would have the mean vector and the covariance matrix for each multivariate Gaussian. Also choosing which which gaussians to choose from is not exactly uniform like a dice .As we are training the alphas as well.
 
 --- 
 
