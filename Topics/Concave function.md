@@ -1,0 +1,1 @@
+concave if its second derivative is (strictly) negative.
