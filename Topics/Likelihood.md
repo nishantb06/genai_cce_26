@@ -7,6 +7,8 @@ $$\int_{\mathcal{X}} p_X(x)\, dx = 1 \quad \text{(valid probability measure)}$$
 
 Likelihood is an element in the range space of a the [[Probability Density]] function p_theta(x). 
 
+Evaluating the PDF at a particular point is called likelihood from sirs lecture
+
 Integrating likelihood over all the valid random variables gives us 1! so can we say that likelihood is the slope of the function which is called probability measure ?
 
 --- from Prob ML 

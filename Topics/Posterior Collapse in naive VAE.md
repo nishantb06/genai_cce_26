@@ -1,6 +1,6 @@
 $$x \rightarrow q_\phi(z \mid x) \rightarrow z \rightarrow p_\theta(x \mid z) \rightarrow \hat{x}_\theta(z)$$
 
-In a VAE, the second term in ELBO,
+In a [[VAEs]], the second term in ELBO,
 
 $$D_{\mathrm{KL}}\left(q_\phi(z \mid x) \,\|\, p(z)\right) \text{ is minimized}$$
 
@@ -20,7 +20,10 @@ $$z_i \sim q_\phi(z \mid x_i) \qquad z_j \sim q_\phi(z \mid x_j)$$
 ### Solution for Posterior Collapse in VAE
 
 $$J_\theta(q_\phi) = \underbrace{\|x - \hat{x}_\theta(z)\|_2^2}_{\text{reconstruction term on } x} + \underbrace{D_{\mathrm{KL}}\left(q_\phi(z \mid x) \,\|\, p(z)\right)}_{\text{Regularization term on } z}$$
-[[Regularization]]
+[[Regularization]] 
+The second term is [[A model can be regularised by penalising the values of the latent variables | Regularization over the latent variable]]
+**VAE is a regularized auto encoder**. 
+Learn the latent variable under the constraint of whatever i specify my prior to be. 
 
 ---
 

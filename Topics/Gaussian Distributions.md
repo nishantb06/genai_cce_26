@@ -1,4 +1,12 @@
 ## Multivariate Gaussian distribution
+> A random variable is said to be k-variate normally distributed if every linear combination of its k components have a univariate normal distribution.
+
+
+> if all k components are independent Gaussian random variables, then  must be multivariate Gaussian (because the sum of independent Gaussian random variables is always Gaussian)
+
+> sum of random variables is different from sum of distribution – the sum of two Gaussian distributions gives you a Gaussian mixture, which is not Gaussian except in special cases.
+
+![[Pasted image 20260626103601.png]]
 $$  
 \mathbf{x} \sim \mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})  
 $$
