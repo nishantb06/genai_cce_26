@@ -301,3 +301,66 @@ $$T_2 = \epsilon^* \sim \mathcal{N}\!\left(0,\, (1 - \alpha_t \cdot \alpha_{t-1}
 $$x_t = \sqrt{\alpha_t \cdot \alpha_{t-1}}\; x_{t-2} + \left(\sqrt{1 - \alpha_t \alpha_{t-1}}\right) \epsilon^*_{t-2}$$
 
 continuing the recursion till $x_0$, $\quad \epsilon_{t-2}^* \sim \mathcal{N}(0, I)$ 
+
+$$x_t = \sqrt{\alpha_t \cdot \alpha_{t-1} \cdots \alpha_1}\, x_0 + \sqrt{1 - \alpha_t \alpha_{t-1} \cdots \alpha_1}\cdot \epsilon \qquad \epsilon \sim \mathcal{N}(0, I)$$
+
+$$x_t = \sqrt{\bar{\alpha}_t}\cdot x_0 + \sqrt{1 - \bar{\alpha}_t}\cdot \epsilon$$
+X-t is the scaled and shifted version of an isotropic gaussian.
+where $\bar{\alpha}_t = \displaystyle\prod_{i=1}^{t} \alpha_i \qquad \epsilon \sim \mathcal{N}(0, I)$
+
+$$q(x_t \mid x_0) = \mathcal{N}\!\left(x_t;\; \sqrt{\bar{\alpha}_t}\cdot x_0,\; (1 - \bar{\alpha}_t)\, I\right)$$
+
+$\Rightarrow$ $t^{\text{th}}$ latent can be obtained directly from the data ($x_0$), without hopping for $t$-steps.
+
+---
+
+Getting back to the Consistency term
+
+$$q(x_{t-1} \mid x_t, x_0) = \frac{q(x_t \mid x_{t-1}) \cdot q(x_{t-1} \mid x_0)}{q(x_t \mid x_0)}$$
+
+$$q\left(x_t \mid x_{t-1}\right) = \mathcal{N}\!\left(x_t;\; \sqrt{\alpha_t}\, x_{t-1},\; (1-\alpha_t)\, I\right)$$
+
+$$q\left(x_t \mid x_0\right) = \mathcal{N}\!\left(x_t;\; \sqrt{\bar{\alpha}_t}\, x_0,\; (1-\bar{\alpha}_t)\, I\right)$$
+
+$$q\left(x_{t-1} \mid x_0\right) = \mathcal{N}\!\left(x_{t-1};\; \sqrt{\bar{\alpha}_{t-1}}\cdot x_0,\; (1-\bar{\alpha}_{t-1})\, I\right)$$
+$$\Rightarrow\quad q(x_{t-1} \mid x_t, x_0) \propto \exp\!\left[-\|x_t - (\cdot)\|_2^2\right] \cdot \exp\!\left(-\|x_{t-1} - (\cdot)\|_2^2\right)$$
+
+$$\div\; \exp\!\left[-\|x_{t-1} - (\cdot)\|_2^2\right]$$
+
+TODO : Plug in all the equations for the 3 Multivariate Gaussian distributions and one would get this formulation
+$$\propto \exp\!\left[-\|x_{t-1} - \mu_q\|_2^2\right]$$
+
+obtained via [[Completion of the Square method]]
+Mean is a function of $x_t$ and $x_o$ because of course those are the [[conditioning variables]] 
+$$q\left(x_{t-1} \mid x_t, x_0\right) = \mathcal{N}\!\left(x_{t-1};\; \mu_q(x_t, x_0),\; \Sigma_q\right)$$
+
+where,
+TODO : Derive the below . Alphas are all scalars they are scaling the vector x_t element-wise
+
+$$\mu_q(x_t, x_0) = \frac{\sqrt{\alpha_t}\,(1-\bar{\alpha}_{t-1})\cdot x_t + \sqrt{\bar{\alpha}_{t-1}}\,(1-\alpha_t)\cdot x_0}{1 - \bar{\alpha}_t}$$
+
+$$\Sigma_q = \frac{(1-\alpha_t)(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t} \cdot I$$
+
+$$= \sigma_q^2 \cdot I$$
+
+Both $\mu_q$ & $\Sigma_q$ and $\therefore$
+
+$q(x_{t-1} \mid x_t, x_0)$ are computable & known.
+
+$$D_{KL}\!\left(q(x_{t-1} \mid x_t, x_0) \,\|\, p_\theta(x_{t-1} \mid x_t)\right)$$
+
+$$p_\theta(x_{t-1} \mid x_t) = \mathcal{N}(x_{t-1};\; \mu_\theta,\; \Sigma_q)$$
+In practice what is done is , only the mean is computed and variance is kept the same as that of q. this is a design choice. 
+$$\Rightarrow\quad D_{KL}\!\left(q(x_{t-1} \mid x_t, x_0) \,\|\, p_\theta(x_{t-1} \mid x_t)\right)$$
+
+$$= D_{KL}\!\left[\mathcal{N}(x_{t-1};\; \mu_q, \Sigma_q) \,\|\, \mathcal{N}(x_{t-1};\; \mu_\theta, \Sigma_q)\right]$$
+$\mu_{\theta}$ is the only term that needs to be computed.
+[[KL divergence between two Gaussians]] is known. 
+$$= \frac{1}{2}\left[\log \frac{|\Sigma_q|}{|\Sigma_q|} - d + \mathrm{tr}\!\left(\Sigma_q^{-1}\Sigma_q\right) + (\mu_\theta - \mu_q)^T \Sigma_q^{-1}(\mu_q - \mu_\theta)\right]$$
+$$\underbrace{\hspace{2cm}}_{I}$$
+The mu's are d dimensional vectors because they are the means of a d-dimensional Gaussian distribution
+The first term is log of 1 which is 0. the minus d and the trace value cancel each other out as the matrix inside the trace function is and Identity matrix and
+$$\Sigma_q^{-1} = (\sigma_q^2\, I)^{-1}$$
+
+$$= \frac{1}{2\sigma_q^2} \left\|\mu_\theta - \mu_q\right\|_2^2 \quad \text{: Regression over } \mu_q$$
+This is the squared error cost. 
