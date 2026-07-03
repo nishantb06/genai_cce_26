@@ -15,4 +15,4 @@
 5. Given that "|"  :     $|$  
 6. Mathcal "\mathcal{some_letter}" : $\mathcal{N}$ , $\mathcal{G}$ 
 7. Proportional TO "\propto" $\propto$
-8. 
+8. Belongs to OR "is a subset of " : "\subset" $\subset$ 

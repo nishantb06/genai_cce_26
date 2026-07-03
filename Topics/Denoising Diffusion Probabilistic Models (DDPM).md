@@ -364,3 +364,98 @@ $$\Sigma_q^{-1} = (\sigma_q^2\, I)^{-1}$$
 
 $$= \frac{1}{2\sigma_q^2} \left\|\mu_\theta - \mu_q\right\|_2^2 \quad \text{: Regression over } \mu_q$$
 This is the squared error cost. 
+
+##  ELBO for DDPM
+
+$$\boxed{J_\theta(q) = \mathbb{E}_{q(x_1 \mid x_0)} \log p_\theta(x_0 \mid x_1) - \sum_{t=2}^{T} \mathbb{E}_{q(x_t \mid x_0)} \frac{1}{2\sigma_q^2} \|\mu_\theta - \mu_q\|_2^2}$$
+
+where $x_T \sim \mathcal{N}(0, I)$
+
+---
+
+### To Compute the Reconstruction Term
+
+Consider $\log p_\theta(x_0 \mid x_1)$
+
+We know, $p_\theta(x_{t-1} \mid x_t) = \mathcal{N}(x_{t-1};\; \mu_\theta(x_t),\; \Sigma_q)$
+
+$$\Rightarrow\quad p_\theta(x_0 \mid x_1) = \mathcal{N}\!\left(x_0;\; \mu_\theta(x_1),\; \sigma_q^2 I\right)$$
+
+$$\log p_\theta(x_0 \mid x_1) = \log \frac{\exp\!\left\{-\dfrac{\|x_0 - \mu_\theta(x_1)\|_2^2}{2\sigma_q^2}\right\}}{(2\pi\sigma_q^2)^{d/2}}$$
+
+$$= -\frac{\|x_0 - \mu_\theta(x_1)\|_2^2}{2\sigma_q^2} - \frac{d}{2}\log 2\pi\sigma_q^2$$
+2nd term is independent of Theta so can be ignored
+$$\underbrace{\hspace{4cm}}_{\text{Ind. of } \theta}$$
+
+$$\Rightarrow\quad \log p_\theta(x_0 \mid x_1) \propto -\frac{\|x_0 - \mu_\theta(x_1)\|_2^2}{2\sigma_q^2}$$
+$$J_\theta(q) = \mathbb{E}_{q(x_1 \mid x_0)} \left[ -\|x_0 - \mu_\theta(x_1)\|_2^2 \right] - \sum_{t=2}^{T} \mathbb{E}_{q(x_t \mid x_0)} \left[ \frac{1}{2\sigma_q^2} \|\mu_\theta(x_t) - \mu_q\|_2^2 \right]$$
+
+$$\theta^* = \underset{\theta}{\mathrm{argmax}}\; J_\theta(q)$$
+
+Basic idea is to express the unknown $\mu_\theta(x_t)$ using a function approximator (NN).
+
+## Diagram
+
+$$x_t,\, t \rightarrow \underbrace{\text{U-net}}_{\substack{\text{decrease} \\ \text{dim}};\,\theta;\,\substack{\text{increase} \\ \text{dim}}} \rightarrow \mu_\theta(x_t) \qquad \|\mu_\theta - \mu_q\|_2^2$$
+
+$\hookrightarrow$ The neural network is a Regressor on $\mu_q$ . Takes and $x_t$ and predicts what $\mu_{\theta}$ is
+
+
+
+When you are regressing over a variable which has the same dimension as the Input architectures like [[Unets]] are shown to do well Unets 
+
+
+
+There is only 1 NN that takes all x_t and predicts the mu theta
+But this NN does not have any idea about the time step which is sent inside as an input.
+
+One NN which predicts $\mu_\theta(x_t)$ for any $x_t$. 
+To ensure that NN has an idea of "time", another fixed variable $t$, corresponding to the "time" of $x_t$ is given as input. 
+
+$t$ is converted into a vector using sinusoidal positional Embeddings.
+# [[Positional Embeddings]]
+
+$$p: t \rightarrow \hat{t}, \qquad t \in \mathbb{Z}^+,\; \hat{t} \in \mathbb{R}^d$$
+p is a function which takes in a positive scalar and converts it into a vector in d dimensional space
+$$\hat{t}(t)_i = \begin{cases} \sin(\omega_k t) & \text{if } i = 2k \\ \cos(\omega_k t) & \text{if } i = 2k+1 \end{cases}$$
+
+$$\omega_k = \frac{1}{(10000)^{2k/d}}$$
+
+---
+
+# ELBO Equivalence
+
+Recall,
+
+$$\frac{1}{2\sigma_q^2}\,\|\mu_\theta(x_t) - \mu_q(x_t, x_0)\|_2^2$$
+
+$$\mu_q(x_t, x_0) = \frac{(1-\bar{\alpha}_{t-1})\cdot\sqrt{\alpha_t}}{1-\bar{\alpha}_t}\, x_t + \frac{(1-\alpha_t)\cdot\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\cdot x_0$$
+We are regressing over mu_q . 
+$$\mu_\theta(x_t) = \frac{(1-\bar{\alpha}_{t-1})\cdot\sqrt{\alpha_t}}{1-\bar{\alpha}_t}\, x_t + \frac{(1-\alpha_t)\cdot\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\, \hat{x}_\theta(x_t)$$
+
+where $\hat{x}_\theta(x_t)$ is the output of a Neural Network.
+mu_theta is something we design. Loss func is a regression over the mu_q . if the true value can be represented in terms of x_t and x_o then the output of the NN can also be represented in terms of x_t and something that we are learning. 
+
+We adjusted the output of the NN by scaling and shifting. as x_t can be considered a constant.
+
+This is done to make the interpretation of DDPM prediction a little more interpretable and a little more tangible
+
+With this, $\dfrac{1}{2\sigma_q^2}\,\|\mu_\theta - \mu_q\|_2^2$
+
+$$= \frac{1}{2\sigma_q^2} \left\| \frac{1-\alpha_t}{1-\bar{\alpha}_t}\sqrt{\bar{\alpha}_{t-1}}\left(\hat{x}_\theta(x_t) - x_0\right) \right\|_2^2$$
+
+$$= \frac{1}{2\sigma_q^2} \cdot \frac{(1-\alpha_t)^2 \bar{\alpha}_{t-1}}{(1-\bar{\alpha}_t)^2} \left\| \hat{x}_\theta(x_t) - x_0 \right\|_2^2$$
+
+![[Pasted image 20260702133817.png]]
+
+$$x_t,\, t \rightarrow \underbrace{\text{U-net}}_{\substack{\text{decrease} \\ \text{dim}};\,\theta;\,\substack{\text{increase} \\ \text{dim}}} \rightarrow \hat{x}_\theta(x_t) \qquad \left\|\hat{x}_\theta(x_t) - x_0\right\|_2^2$$
+
+$\hookrightarrow$ Regressor on the input data point $x_0$.
+
+The above network can be viewed as a "denoiser" for the datapoint $x_0$, at all noisy instances $x_t$.
+
+Unlike in a GAN / VAE, the Neural Network that gets trained in a DDPM, does not output the novel data point from $P_{x_0}$ (true data dist.). It is a simply a regressor over the input datapoint $x_o$
+
+Next Reading 
+[[Training DDPM's]]
+[[Inference in DDPM's]]
