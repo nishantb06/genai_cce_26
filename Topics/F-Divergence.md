@@ -61,6 +61,4 @@ $$D_{\mathrm{TV}}(P_X | P_\theta) = D_f(P_X | P_\theta) \quad \text{with } f(u) 
 
 ---
 
-## Tags
-
-#f-divergence #KL-divergence #JS-divergence #total-variation #generative-modelling #probability #machine-learning
+[[How to choose the f function]]

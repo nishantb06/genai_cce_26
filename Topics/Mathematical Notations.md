@@ -1,4 +1,6 @@
 
+https://gist.github.com/LKS90/252ac41bd4a173be35b0
+
 1. This implies \implies
 		$$
 		\implies
@@ -15,4 +17,5 @@
 5. Given that "|"  :     $|$  
 6. Mathcal "\mathcal{some_letter}" : $\mathcal{N}$ , $\mathcal{G}$ 
 7. Proportional TO "\propto" $\propto$
-8. Belongs to OR "is a subset of " : "\subset" $\subset$ 
+8. Belongs to OR "is a subset of " : "\subset" $\subset$  , "\subseteq" $\subseteq$  
+9. In : "\in" : $\in$ . If x is an element in the set A . $x \in A$  , "\notin"

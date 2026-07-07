@@ -1,3 +1,4 @@
+[[Probability is a measure of the size or weight or volume of a set]]
 ### Recap on Probability Theory
 
 **Motivation:** We model uncertainty via repeated observations.

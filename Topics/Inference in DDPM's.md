@@ -65,4 +65,6 @@ The distribution that we are sampling from is not conditioned on another Data va
 Next we need to see how to change the formulation of the DDPM's so it samples from the Conditional Distributions
 These are
 
-[[Classifier Guided Diffusion]] and [[Classifier Free Diffusion]]
+[[Guided Diffusion]] and [[Classifier Free Guidance]]
+
+[[Alternate Interpretations of a DDPM]]
