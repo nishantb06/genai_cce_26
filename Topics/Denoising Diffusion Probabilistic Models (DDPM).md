@@ -1,4 +1,5 @@
 
+[[DDPM Original Paper]]
 
 --- 
 Change in Notation
@@ -244,7 +245,7 @@ $$\mathbb{E}_{q(x_1 \mid x_0)} \log p_\theta(x_0 \mid x_1) + \mathbb{E}_{q(x_T \
 $$+ \sum_{t=2}^{T} \mathbb{E}_{q(x_t \mid x_0)} \cdot \mathbb{E}_{q(x_{t-1} \mid x_t,, x_0)} \left( \log \frac{p_\theta(x_{t-1} \mid x_t)}{q(x_{t-1} \mid x_t, x_0)} \right)$$
 The second term is the negative of the KL
 
-$$\boxed{= \mathbb{E}_{q(x_1 \mid x_0)} \log p_\theta(x_0 \mid x_1) - D_{KL}\!\left(q(x_T \mid x_0) ,|, p(x_T)\right) - \sum_{t=2}^{T} \mathbb{E}_{q(x_t \mid x_0)} \left[ D_{KL}\!\left(q(x_{t-1} \mid x_t, x_0) \!||\, p_\theta(x_{t-1} \mid x_t)\right) \right]}$$
+$$\boxed{= \mathbb{E}_{q(x_1 \mid x_0)} \log p_\theta(x_0 \mid x_1) - D_{KL}\!\left(q(x_T \mid x_0) \,||\, p(x_T)\right) - \sum_{t=2}^{T} \mathbb{E}_{q(x_t \mid x_0)} \left[ D_{KL}\!\left(q(x_{t-1} \mid x_t, x_0) \!||\, p_\theta(x_{t-1} \mid x_t)\right) \right]}$$
 
 ---
 
