@@ -1,0 +1,1 @@
+An axiom is a proposition that serves as a premise or starting point in a logical system.Axioms are not definitions, nor are they theorems. They are believed to be true or true within a certain context.

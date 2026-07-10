@@ -1,4 +1,4 @@
-It is a function which maps an element of the Event space to a Positive real number between 0 and 1. 
+It is a function which maps an element of the Event space to a Positive real number between 0 and 1. The function must satisfy the [[axioms of probability]]
 
 We need to assign a weight / volume to a particular sample from the event or sample space . this function which does this is called the probability measure. 
 
