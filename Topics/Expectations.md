@@ -44,3 +44,61 @@ $$\mathbb{E}[X + c] = \mathbb{E}[X] + c.$$
 [[Multiplicative Property of Expectations]]
 
 Based on the Concepts of expectations, we can define [[Moment]] and [[Variance]]
+
+---
+
+For Continuous random variables 
+Just replace the summation with integration
+
+$$\mathbb{E}[X] = \int_\Omega x\, f_X(x)\, dx.$$
+
+
+
+Let $g: \Omega \to \mathbb{R}$ be a function and $X$ be a continuous random variable. Then
+
+$$\mathbb{E}[g(X)] = \int_\Omega g(x)\, f_X(x)\, dx.$$
+
+---
+
+All the properties coming from the discrete case can be transported here as well
+
+Further more 
+
+A random variable $X$ has an expectation if it is absolutely integrable, i.e.,
+
+$$\mathbb{E}[|X|] = \int_\Omega |x|\, f_X(x)\, dx < \infty.$$
+
+Being absolutely integrable implies that $\mathbb{E}[|X|]$ is an upper bound of $|\mathbb{E}[X]|$
+
+#### Moment and Variance of a continuous RV
+The moment and variance of a continuous random variable can be defined analogously to the moment and variance of a discrete random variable, replacing the summations with integrations.
+
+Definition 4.5
+
+The $k$th moment of a continuous random variable $X$ is
+
+$$\mathbb{E}[X^k] = \int_\Omega x^k\, f_X(x)\, dx.$$
+
+Definition 4.6
+
+The variance of a continuous random variable $X$ is
+
+$$\mathrm{Var}[X] = \mathbb{E}[(X - \mu)^2] = \int_\Omega (x - \mu)^2\, f_X(x)\, dx,$$
+
+where $\mu \stackrel{\mathrm{def}}{=} \mathbb{E}[X]$.
+
+It is not difficult to show that the variance can also be expressed as
+
+$$\mathrm{Var}[X] = \mathbb{E}[X^2] - \mu^2,$$
+
+because
+
+$$
+\begin{aligned}
+\mathrm{Var}[X]
+&= \mathbb{E}[(X - \mu)^2] \\
+&= \mathbb{E}[X^2] - 2\mathbb{E}[X]\mu + \mu^2 \\
+&= \mathbb{E}[X^2] - \mu^2.
+\end{aligned}
+$$
+

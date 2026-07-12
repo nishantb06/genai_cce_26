@@ -1,5 +1,7 @@
 **Probability** is an operator that takes a set and tells us how large the set is.
-
+$$
+P[{x∈A}]= \frac{size\quad of \quad A​}{size\quad of\quad Ω}
+$$
 The event "even number" on a die is a set containing $\{2, 4, 6\}$. When we apply probability to this set, we obtain $\frac{3}{6}$, as shown in Figure 2.1. Thus sets are the foundation of the study of probability.
 
 Previous reading: [[Set Theory]]
@@ -36,4 +38,4 @@ There are infinite elements in the set, so the probability of picking one point 
 $$
 \int_{0.5}^{0.5} f(x) dx = 0
 $$
-For any [[Probability Density | Weighting function]] the integral would be zero. 
+For any [[Probability Density Function| Weighting function]] the integral would be zero. 

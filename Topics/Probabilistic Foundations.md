@@ -22,4 +22,4 @@ Related
 [[Conditional Probability Distribution]]
 [[Marginal Distribution]]
 [[Joint Distribution]]
-[[Probability Density]]
+[[Probability Density Function]]

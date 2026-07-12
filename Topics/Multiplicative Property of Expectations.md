@@ -1,4 +1,6 @@
-If $X$ and $Y$ are independent, then $\mathbb{E}[XY] = \mathbb{E}[X]\mathbb{E}[Y]$.
+If $X$ and $Y$ are independent, then $\mathbb{E}[XY] = \mathbb{E}[X].\mathbb{E}[Y]$ 
+
+--- 
 
 Yes. If $X$ and $Y$ are independent and the expectations exist (for example, $\mathbb{E}[|XY|] < \infty$), then
 
@@ -54,4 +56,4 @@ $$
 \boxed{\mathbb{E}[g(X)h(Y)] = \mathbb{E}[g(X)]\,\mathbb{E}[h(Y)].}
 $$
 
-This generalization is frequently used in probability and machine learning proofs.
+This generalisation is frequently used in probability and machine learning proofs.

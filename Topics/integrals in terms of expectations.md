@@ -5,7 +5,7 @@ Then this expectation can be approximated using the [[Weak Law of Large Numbers 
 
 The probability density can also be a conditional probability density function. In that case x will be sample from a conditional probability density function
 
-Integrals involving [[Probability Density]] functions can be approximated using samples drawn from the distribution
+Integrals involving [[Probability Density Function]] functions can be approximated using samples drawn from the distribution
 
 ## Key Idea
 
