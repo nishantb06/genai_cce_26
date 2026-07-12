@@ -41,6 +41,6 @@ DC Shift. For any constant $c$,
 $$\mathbb{E}[X + c] = \mathbb{E}[X] + c.$$
 
 [[Linear property of expected values]]
-
+[[Multiplicative Property of Expectations]]
 
 Based on the Concepts of expectations, we can define [[Moment]] and [[Variance]]

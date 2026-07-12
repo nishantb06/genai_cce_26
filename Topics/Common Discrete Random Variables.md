@@ -1,0 +1,5 @@
+[[Bernoulli Random Variable]]
+[[Rademacher Random Variable]] 
+[[Binomial Random Variable]] 
+[[Geometric Random Variable]]
+[[Poisson Random Variable]] 

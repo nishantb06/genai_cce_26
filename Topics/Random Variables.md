@@ -46,3 +46,5 @@ Wait a minute, is this set just equal to $E$? Yes, the event $E$ we are seeking 
 $$P[X=a] = P[X^{-1}(a)].$$
 
 Next read [[Probability Mass Functions (PMF)]] for Discrete Random Variables. 
+
+Next read [[Common Discrete Random Variables]]
