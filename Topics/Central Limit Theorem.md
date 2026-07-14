@@ -1,0 +1,3 @@
+- When we sum many independent random variables, the resulting random variable is a Gaussian. read : [[As we sum more random variables, the distribution of the sum will converge to a Gaussian |this]]
+- This is known as the Central Limit Theorem. **The theorem applies to _any_ random variable.**
+- Summing random variables is equivalent to [[Convolution of PDF's|convolving the PDFs]]. Convolving PDFs infinitely many times yields the bell shape.

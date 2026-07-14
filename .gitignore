@@ -14,3 +14,5 @@ Thumbs.db
 *.epub
 
 *.zip
+.cursor
+.cursorignore

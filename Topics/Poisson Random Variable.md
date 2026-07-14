@@ -1,3 +1,5 @@
+ **Poisson random variable is a random variable that describes the number of events that happen in a certain period**
+
 In many physical systems, the arrivals of events are typically modeled as a Poisson random variable, e.g., photon arrivals, electron emissions, and telephone call arrivals. In social networks, the number of conversations per user can also be modeled as a Poisson. In e-commerce, the number of transactions per paying user is again modeled using a Poisson.
 
 Let $X$ be a Poisson random variable. Then, the PMF of $X$ is

@@ -47,4 +47,5 @@ $$P[X=a] = P[X^{-1}(a)].$$
 
 Next read [[Probability Mass Functions (PMF)]] for Discrete Random Variables. 
 
-Next read [[Common Discrete Random Variables]]
+Next read [[Common Discrete Random Variables]] , [[Common Continuous Random Variable]]
+ 
